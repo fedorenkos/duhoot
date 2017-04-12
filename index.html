@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Duhoot</title>
+
+	<link rel="stylesheet" href="css/duhoot.css">
+	<link rel="stylesheet" type="text/css" href="css/media.css">
+	<link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	<script src="js/duhoot.js"></script>
+
+	
+</head>
+<body>
+
+<header>
+		<div class="container">
+				<div class="header_menu">
+
+					<div class="logo">
+						<a href="#"><img src="img/logo.png" alt=""></a>
+					</div><!--end logo-->
+					
+					<div id="touch-menu">
+						MENU
+					</div>
+					<div class="nav">
+							<ul class="clearfix">
+								<li><a href="#">Reality</a></li>
+								<li><a href="#">Living</a></li>
+								<li><a href="#">Education</a></li>
+								<li><a href="#">Entertainment</a></li>
+								<li><a href="#">Mobility</a></li>
+							</ul>
+					</div><!--end nav-->
+					<div class="header_right">
+						<div class="panel">
+							<form class="form_search">
+								 <input type="text" id="search-input" class="form-search-input" placeholder="Search...">				 
+								 <button id="handel" class="search_submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+							</form>
+						</div><!--end search-->
+						<div class="login">
+								<a href="#" class="login_txt" onclick="document.getElementById('id01').style.display='block'">
+									<span><i class="fa fa-user-o fa-lg" aria-hidden="true"></i>Login</span>
+								</a>
+
+								<!--Modal-->
+								<div id="id01" class="modal1">
+									<span onclick="document.getElementById('id01').style.display='none'" class="close" title="close modal">&times;</span>
+									<!--Modal Content-->
+									<form class="modal-content animate" action="/action_page.php">
+										<div class="imgcontainer">
+											<img src="img/darthvader.jpg" alt="" class="avatar">									
+										</div>
+
+										<div class="cont_block">
+											<label><b>Username</b></label>
+											<input class="log_input" type="text" placeholder="Enter Username" name="uname" required><br><br>
+
+											<label><b>Password</b></label>
+											<input class="log_input" type="password" placeholder="Enter Password" name="psw" required><br><br>
+
+											<button class="submit_btn" type="submit">Login</button>
+											<input type="checkbox" checked="checked">Remember me
+
+										</div>
+										<div class="cont_block1" style="background-color: #f1f1f1">
+											<button class="cancel_btn" type="button" onclick="document.getElementById('id01').style.display='none'">Cancel
+											</button>
+											<span class="psw">Forgot <a href="#">password?</a></span>
+										</div>
+											
+										
+									</form>
+								</div>
+								
+						</div><!--end login-->
+					</div>
+				</div><!--end header menu-->
+		</div><!--End container-->
+</header>
+ 
+<section>
+	<div class="container">
+		<div class="search_bg">
+			
+				<div class="search1">
+					<h1 class="search_h1">What are you looking for?</h1>
+				</div>
+				<div class="modal">
+							
+									<select class="country_form country " name="country" id="country-list" onchange="changeCountryList()">
+										<option value="">--Country--</option>
+										<option value="ger" >Germany</option>
+										<option value="uk">UK</option>
+										<option value="usa">USA</option>
+										<option value="it">Italy</option>
+										<option value="ukr">Ukraine</option>
+									</select>
+								
+
+							
+									<select name="city" class="city country_form1" id="city-list">
+										<option value="">--City--</option>
+									</select>
+								
+
+							<form class="country_list">
+								<input class="search_list" list="search_tour_list">
+								
+							</form>
+							<div class="btn_search">
+								<a href="#">Search</a>
+							</div>	
+				</div><!--modal-->	
+			
+		</div><!--search_bg-->	
+	</div><!--end container--> 
+</section>
+
+<section>
+	<div class="container">
+		<div class="filter_box">
+
+
+			<a href="#" class="r_filter" id="recom_filter">RECOMMEND</a>
+			<div class="recommend">
+				<ul>
+					<li><a href="#" class="recom_a">Recommended</a></li>
+					<li><a href="#" class="recom_a">Latest</a></li>
+					<li><a href="#" class="recom_a">Highlights</a></li>
+				</ul>
+			</div><!--End recommend-->
+
+			<a href="#" class="h_filter" id="hidden_filter">COUNTRIES</a>
+			<div class="filters">
+				<div class="country_filters">
+					
+					<select class="filter_map country " name="country" id="country-map" onchange="changeCountryMap()">
+										<option value="">--Country--</option>
+										<option value="ger" >Germany</option>
+										<option value="uk">UK</option>
+										<option value="usa">USA</option>
+										<option value="it">Italy</option>
+										<option value="ukr">Ukraine</option>
+									</select>
+								
+
+							
+									<select name="city" class="city filter_map1" id="city-map">
+										<option value="">--City--</option>
+									</select>
+								
+				
+				</div><!--End country_filter-->
+			</div><!--filters-->	
+
+			<a href="#" class="f_filter" id="sub_filter">FILTER</a>
+
+			<div class="subfilter">	
+				<div class="sub_filters">
+
+					
+						<div class="main_filter">
+							<span class="span_filter">Filter:</span>
+							<ul >
+								<li class="imgl imgl1"><a href="#"><img src="img/home.png" alt=""></a></li>
+								<li class="imgl imgl2"><a href="#"><img src="img/girll.png" alt=""></a></li>
+								<li class="imgl imgl3"><a href="#"><img src="img/hatl.png" alt=""></a></li>
+								<li class="imgl imgl4"><a href="#"><img src="img/musicl.png" alt=""></a></li>
+								<li class="imgl imgl5"><a href="#"><img src="img/busl.png" alt=""></a></li>
+
+							</ul>
+							
+						</div>
+				<!-- </div> -->
+			</div><!--subfilter-->	
+			
+		</div><!--end filter_box-->
+	</div><!--End container-->
+</section>
+
+<section>
+	<div class="container">
+		<div class="offer_bg">
+			<div class="offer">
+				<div class="offer_small">
+					<div class="offs_pi1 pi1">
+						
+							<p class="pic1_offs">$2,990</p>
+							<img src="img/pic1short.jpg" alt="">
+							<div class="pics" >
+								<img src="img/home.png" class="img-responsive" alt="">
+							</div>
+							<p class="pic_cont_p">2 bedroom house for rent in Dubai</p>
+							
+							<fieldset class="star-rating">
+							    <legend class="legend">Vision Agency</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+							
+						
+					</div><!--offs_pi1-->
+					<div class="offs_pi1 pi1">
+						
+							
+							<img src="img/pic2short.jpg" alt="">
+							<div class="pics1" >
+								<img src="img/musicl.png" class="img-responsive"alt="">
+							</div>
+							<p class="pic_cont_p">Beach party festival 2014</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend1">Long Beach</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi2-->
+					<div class="offs_pi1 pi2">
+						
+							
+							<img src="img/pic4short.jpg" class="img-responsive" alt="">
+							<div class="pics2" >
+								<img src="img/busl.png" class="img-responsive" alt="">
+							</div>
+							<p class="pic_cont_p">Aliquam quis pulvinar purus</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend2">Bus trans</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi3-->
+
+					<div class="offs_pi1 ">
+						
+							<p class="pic1_offs">$2,990</p>
+							<img src="img/pic3short.jpg" class="img-responsive" alt="">
+							<div class="pics" >
+								<img src="img/home.png" alt="">
+							</div>
+							<p class="pic_cont_p">4 bedroom house for rent in Dubai</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend">Reality Agency</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi4-->
+						
+					
+				</div>
+			</div><!--End Offer	-->
+			
+			
+			<div class="offer_long">
+				<div class="long_pic">
+					<img src="img/piclongappart.jpg" class="img-responsive imglong" alt="">
+					<p class="pic_long_p">Vision agency</p>
+					<div id="star-rating5" class="star-rating_long1">
+							<fieldset class="star-rating">
+							    <div class="star-rating_stars1" onclick="myFunction()">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+								    <span class="span" id="span0">(0)</span>
+					</div>
+					
+					<div class="pics_long" >
+								<img src="img/home.png" alt="">
+					</div>
+					<div class="pics_lucy" >
+								<img src="img/lucyy.png" alt="">
+					</div>
+					<div id="star-rating5" class="star-rating_long2">
+								
+								   <fieldset class="star-rating">
+							    
+							    <div class="star-rating_stars1a">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+					</div>
+					<p class="lucy">Lucy-P</p>
+					<p class="lucy_txt">“Aliquam quis pulvinar purus. Etiam cursus ipsum quis enim faucibus, quis posuere orci ornare. Duis mattis sagittis fringilla.” <a href="#" class="link">...read more</a></p>
+				</div>
+					
+				<div class="long_pic_peter">
+					<div class="piclong_club">	
+							<img src="img/piclongclub.jpg" class="img-responsive imglong" alt="">
+							<div class="club">	</div>
+					</div>		
+					<p class="pic_long_peter">Skybox Club</p>
+					<div id="star-rating6" class="star-rating_long1_peter ">
+								    <fieldset class="star-rating">
+							    <div class="star-rating_stars2 " onclick="myFunction1()">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+								    <span class="span1" id="span1A">(0)</span>
+
+					</div>
+					
+					<div class="pics_long_peter" >
+								<img src="img/home.png" alt="">
+					</div>
+					<div class="pics_peter" >
+								<img src="img/peter.png" alt="">
+					</div>
+
+					<div id="star-rating6" class="star-rating_long2_peter">
+								
+								    <fieldset class="star-rating">
+							    <div class="star-rating_stars3">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+					</div>
+					<p class="peter">Peter145</p>
+					<p class="peter_txt">“Aliquam quis pulvinar purus. Etiam cursus ipsum quis enim faucibus, quis posuere orci ornare. Duis mattis sagittis fringilla.” <a href="#" class="link">...read more</a></p>
+
+				</div>
+
+					
+					
+			</div><!--End offer_long-->
+			<div class="offer_small">
+					<div class="offs_pi1">
+						
+							<p class="pic1_offs">$2,990</p>
+							<img src="img/pic1short.jpg" alt="">
+							<div class="pics" >
+								<img src="img/home.png" alt="">
+							</div>
+							<p class="pic_cont_p">2 bedroom house for rent in Dubai</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend">Vision Agency</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi1-->
+					<div class="offs_pi1">
+						
+							
+							<img src="img/pic2short.jpg" alt="">
+							<div class="pics1" >
+								<img src="img/musicl.png" alt="">
+							</div>
+							<p class="pic_cont_p">Beach party festival 2014</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend1">Long Beach</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi2-->
+					<div class="offs_pi1">
+						
+							
+							<img src="img/pic4short.jpg" alt="">
+							<div class="pics2" >
+								<img src="img/busl.png" alt="">
+							</div>
+							<p class="pic_cont_p">Aliquam quis pulvinar purus</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend2">Bus trans</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi3-->
+
+					<div class="offs_pi1">
+						
+							<p class="pic1_offs">$2,990</p>
+							<img src="img/pic3short.jpg" alt="">
+							<div class="pics" >
+								<img src="img/home.png" alt="">
+							</div>
+							<p class="pic_cont_p">4 bedroom house for rent in Dubai</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend">Reality Agency</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi4-->
+						
+					
+				</div>
+
+			<div class="offer_mix">
+					<div class="long_pic_mix">
+						<img src="img/piclongclub.jpg" class="img-responsive imglong" alt="">
+						<p class="pic_long_mix">Skybox Club</p>
+						<div id="star-rating11" class="star-rating_long1_mix">
+									    <fieldset class="star-rating">
+							    <div class="star-rating_stars1" onclick="myFunction2()">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+									    <span class="span" id="span2">(0)</span>
+						</div>
+						
+						<div class="pics_long_mix" >
+									<img src="img/home.png" class="img-responsive" alt="">
+						</div>
+						<div class="pics_mix" >
+									<img src="img/peter.png" alt="">
+						</div>
+						<div id="star-rating12" class="star-rating_long2_mix">
+									
+									     <fieldset class="star-rating">
+							    <div class="star-rating_stars4">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						</div>
+						<p class="mix">Peter145</p>
+						<p class="mix_txt">“Aliquam quis pulvinar purus. Etiam cursus ipsum quis enim faucibus, quis posuere orci ornare. Duis mattis sagittis fringilla.” <a href="#" class="link">...read more</a></p>
+					</div>
+					<div class="offs_pi1">
+						
+							<p class="pic1_offs">$2,990</p>
+							<img src="img/pic1short.jpg" alt="">
+							<div class="pics" >
+								<img src="img/home.png" alt="">
+							</div>
+							<p class="pic_cont_p">2 bedroom house for rent in Dubai</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend">Vision Agency</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi1-->
+					<div class="offs_pi1">
+						
+							
+							<img src="img/pic2short.jpg" alt="">
+							<div class="pics1" >
+								<img src="img/musicl.png" alt="">
+							</div>
+							<p class="pic_cont_p">Beach party festival 2014</p>
+							
+						
+							<fieldset class="star-rating">
+							    <legend class="legend1">Long Beach</legend>
+							    <div class="star-rating_stars">
+							    	<span class="star-rating_star" title="Give 5 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 4 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 3 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 2 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+								    <span class="star-rating_star" title="Give 1 stars"><i class="fa fa-star" aria-hidden="true"></i></span>
+							    </div>
+							</fieldset>
+						
+					</div><!--offs_pi2-->
+					
+			</div><!--End offer_mix-->
+			<div class="load_link">
+						<a href="#" class="load_more">Load more <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
+					</div><!--Load more-->
+		</div><!--End offer_bg-->			
+	</div><!--End container-->
+</section>
+
+<section>
+	<div class="container">
+		<div class="offer_bg">
+			<div class="offer_to_txt">
+				<h2 class="offer_to_U">What can DuHoot offer to you?</h2>
+				<p class="offer_to_p">Etiam cursus ipsum quis enim faucibus</p>
+			</div>
+
+			<div class="offer_filter">
+				<div ><a href="#" ><img class="offer_clr1" src="img/home1.png" alt=""></a></div>
+				<div class=""><a href="#"><img class="offer_clr2" src="img/girl.png" alt=""></a></div>
+				<div class=""><a href="#"><img class="offer_clr3" src="img/hat.png" alt=""></a></div>
+				<div class=""><a href="#"><img class="offer_clr4" src="img/music.png" alt=""></a></div>
+				<div class=""><a href="#"><img class="offer_clr5" src="img/bus.png" alt=""></a></div>
+			</div><!--offer_filter-->
+			
+				<p class="reality">Reality</p>
+			
+			<div class="real_ty">
+				<div class="flash1">
+					<div class="thunder" >
+						<img src="img/thunder.png" alt="">
+					</div><!--End thunder-->
+					<div class="flash">
+						
+						<p class="flash_p">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+					</div><!--End flash-->
+				</div>	
+				<div class="leaf1">
+					<div class="leaf">
+						<img src="img/leaf.png" alt="">
+					</div><!--End thunder-->
+					<div class="leaf_col">
+						
+						<p class="flash_p">Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Morbi gravida tellus in purus pharetra, vel dignissim mauris viverra. Maecenas vitae risus est. In hendrerit, massa at.</p>
+					</div><!--End leaf-->
+				</div>	
+			</div><!--real_ty-->
+		</div><!--End offer_bg-->
+	</div><!--End container-->
+</section>
+<footer>
+	<div class="container">
+		<div class="footer_bg">
+			<h2 class="h2_footer">Subscribe to our newsletter</h2>
+			<div class="btn_search_footer">
+				<form class="send_msg">
+				<input type="email" class="send_msg_" list="email list" value="your@email.com">
+				<i class="fa fa-envelope-o" aria-hidden="true"></i>
+					<a href="#" class="btn_subscrb">Subscribe</a>				
+				</form>
+			</div>
+			
+			<div class="footer_content">
+				<div class="footer_block1">
+					<h3 class="block_h3">Ipsum quis</h3>
+					<div class="socials">
+						<p class="block1_p">Aliquam quis </p>
+						<p class="block1_p">Pulvinar purus</p>
+						<p class="block1_p">Etiam cursus</p>
+						<p class="block1_p">Ipsum quis</p>
+						<p class="block1_p">Enim faucib</p>
+					</div>
+				</div>
+				<div class="footer_block2">
+					<h3 class="block_h3">Ipsum quis</h3>
+					<div class="socials">
+						<p class="block1_p">Aliquam quis </p>
+						<p class="block1_p">Pulvinar purus</p>
+						<p class="block1_p">Etiam cursus</p>
+						<p class="block1_p">Ipsum quis</p>
+						<p class="block1_p">Enim faucib</p>
+					</div>
+				</div>
+				<div class="footer_block3">
+					<h3 class="block_h3">Follow us</h3>
+					<div class="socials">
+						<a href="#"><i class="fa fa-facebook fa-2x" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-google-plus fa-2x" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-youtube fa-2x" aria-hidden="true"></i></a>
+					</div>
+					<p class="copyright">Copyright © All Rights reserved</p>
+				</div>
+			</div>				
+		</div><!--End footer_bg-->
+	</div><!--End container-->
+</footer>
+
+
+</body>
+</html>
